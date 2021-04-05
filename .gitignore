@@ -2,6 +2,9 @@
 
 # Firebase config
 /src/environments
+.firebase/
+.firebaserc
+firebase.json
 
 # compiled output
 /dist
