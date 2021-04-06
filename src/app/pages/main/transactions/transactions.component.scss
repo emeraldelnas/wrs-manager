@@ -1,0 +1,31 @@
+.transactions {
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 0.38px;
+  overflow: hidden;
+
+  .header {
+    padding-bottom: 1rem;
+
+    &.w-shadow {
+      box-shadow: 0px 5px 10px -2px #231f39;
+    }
+  }
+
+  .transactions-list {
+    max-height: 7.75rem;
+    overflow: hidden auto;
+    display: flex;
+    flex-direction: column-reverse;
+
+    padding-right: 7%;
+    width: calc(100% + 6.5%);
+
+    position: relative;
+
+    app-transaction:not(:last-child) {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  }
+}
