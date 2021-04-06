@@ -1,0 +1,13 @@
+<div class="transactions">
+  <p class="header" [ngClass]="{ 'w-shadow': transactions >= 6 }">
+    {{ transactions }} Transactions
+  </p>
+
+  <div class="transactions-list">
+    <div>
+      <app-transaction
+        *ngFor="let item of [].constructor(transactions)"
+      ></app-transaction>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+@import "../../../../styles/variables";
+
+.today-sales {
+  color: #fff;
+  text-align: center;
+
+  .today-date {
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    margin-bottom: 1rem;
+  }
+
+  .today-total {
+    font-size: 3rem;
+
+    .prefix {
+      font-weight: 300;
+    }
+
+    .total-amount {
+      color: $secondary-color;
+    }
+  }
+}
