@@ -31,7 +31,7 @@
   <button
     class="btn-submit btn"
     type="button"
-    (click)="openConfirmModal(template)"
+    (click)="openConfirmModal(confirmModal)"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@
   </button>
 </div>
 
-<ng-template #template>
+<ng-template #confirmModal>
   <div class="modal-header">
     <h4 class="modal-title">Confirm Purchase</h4>
   </div>
