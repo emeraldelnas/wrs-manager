@@ -31,12 +31,18 @@
       margin-top: 0.5rem;
 
       .control {
-        background-color: #f8f8f8;
+        // background-color: #f8f8f8;
         border-radius: 0.9375rem;
+        padding: 0;
         width: 2.5rem;
         height: 2.8125rem;
         display: grid;
         place-content: center;
+
+        &:hover,
+        &:focus {
+          background-color: #f3f3f3;
+        }
 
         &:not(:last-child) {
           margin-right: 0.75rem;
@@ -49,5 +55,6 @@
     background-color: #f6f5ff;
     border-radius: 0.9375rem;
     height: 6.375rem;
+    padding: 0;
   }
 }

@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: #272343;
+$secondary: #ff6363;
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "./styles/variables";
 @import "./styles/reboot";
 @import "./styles/page";
+@import "./styles/buttons";
