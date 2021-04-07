@@ -12,10 +12,10 @@ export class AppComponent implements OnInit {
   showButton = false;
 
   ngOnInit(): void {
-    window.oncontextmenu = function (event: {
+    window.oncontextmenu = (event: {
       preventDefault: () => void;
       stopPropagation: () => void;
-    }) {
+    }) => {
       event.preventDefault();
       event.stopPropagation();
       return false;
