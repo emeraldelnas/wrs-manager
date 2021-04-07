@@ -4,9 +4,9 @@
     <p class="name">Round Gallon</p>
   </div>
   <div class="quantity-control">
-    <p class="quantity">12x</p>
+    <p class="quantity">{{ quantity }}x</p>
     <div class="controls">
-      <button class="control btn btn-light">
+      <button class="control btn btn-light" (click)="remove()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -16,7 +16,7 @@
           <path fill="rgb(39 35 67)" d="M5 11h14v2H5z" />
         </svg>
       </button>
-      <button class="control btn btn-light">
+      <button class="control btn btn-light" (click)="add()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -28,7 +28,11 @@
       </button>
     </div>
   </div>
-  <button class="btn-submit btn" type="button">
+  <button
+    class="btn-submit btn"
+    type="button"
+    (click)="openConfirmModal(template)"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -42,3 +46,28 @@
     </svg>
   </button>
 </div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title">Confirm Purchase</h4>
+  </div>
+  <div class="modal-body">
+    <div class="confirm-details">
+      <p class="confirm-quantity">{{ quantity }}x</p>
+      <p class="confirm-product">Round Gallon</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      data-dismiss="modal"
+      (click)="confirmModalRef.hide()"
+    >
+      Cancel
+    </button>
+    <button type="button" class="btn btn-primary" (click)="confirmQuantity()">
+      Confirm
+    </button>
+  </div>
+</ng-template>

@@ -2,9 +2,12 @@
 $primary: #272343;
 $secondary: #ff6363;
 
+$modal-content-border-width: 0;
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "./styles/variables";
 @import "./styles/reboot";
 @import "./styles/page";
+@import "./styles/modal";
 @import "./styles/buttons";
