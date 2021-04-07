@@ -1,15 +1,26 @@
-import { Component, HostListener, TemplateRef } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'wrs-manager';
 
   deferredPrompt: any;
   showButton = false;
+
+  ngOnInit(): void {
+    window.oncontextmenu = function (event: {
+      preventDefault: () => void;
+      stopPropagation: () => void;
+    }) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    };
+  }
 
   @HostListener('window:beforeinstallprompt', ['$event'])
   onbeforeinstallprompt(e) {
