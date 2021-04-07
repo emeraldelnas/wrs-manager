@@ -5,7 +5,7 @@
   overflow: hidden;
 
   .header {
-    padding-bottom: 1rem;
+    padding-bottom: 0.65rem;
 
     &.w-shadow {
       box-shadow: 0px 5px 10px -2px #231f39;
@@ -22,6 +22,7 @@
     width: calc(100% + 6.5%);
 
     position: relative;
+    scroll-behavior: smooth;
 
     app-transaction:not(:last-child) {
       display: block;

@@ -9,10 +9,10 @@ html {
 }
 
 body {
-  background-color: $primary-color;
-  color: $primary-color;
+  background-color: $primary;
+  color: $primary;
   margin: 0;
-  font-family: $font-family-base;
+  font-family: $font-family-base, sans-serif;
   font-size: $font-size-base;
   line-height: $line-height-base;
   letter-spacing: $letter-spacing-base;
