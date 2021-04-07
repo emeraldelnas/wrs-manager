@@ -1,13 +1,12 @@
 .main-wrapper {
   height: 100vh;
-}
-
-.top {
-  height: 55vh;
+  display: flex;
+  flex-flow: column;
 }
 
 .today-sales {
-  padding-top: 4vh;
+  margin-top: 4vh;
+  margin-bottom: auto;
 }
 
 .link {
@@ -20,12 +19,10 @@
   text-align: center;
 }
 
-.transactions {
-  margin-top: 2.5rem;
-}
-
 .products {
-  height: 45vh;
+  margin-bottom: 0;
+  margin-top: auto;
+
   background-color: #fff;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
@@ -34,14 +31,12 @@
   scroll-behavior: smooth;
 
   > div {
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
     height: 40vh;
     overflow: hidden auto;
     padding-top: 0.25rem;
-    padding-right: 13%;
+    padding-right: 15%;
     padding-bottom: 2.75rem;
-    width: calc(100% + 13%);
+    width: calc(100% + 15%);
   }
 
   .link {
