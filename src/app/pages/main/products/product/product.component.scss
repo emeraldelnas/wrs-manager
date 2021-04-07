@@ -42,13 +42,13 @@
 
         &:hover,
         &:focus {
-          background-color: #f3f3f3;
+          background-color: #f8f9fa;
           box-shadow: none;
         }
 
         &:active,
         &:active:focus {
-          background-color: #f8f9fa;
+          background-color: #f3f3f3;
           box-shadow: 0 0 0 0.2rem rgb(216 217 219 / 50%);
         }
 
@@ -79,5 +79,19 @@
       background-color: #e8e8fb;
       box-shadow: 0 0 0 0.2rem rgb(216 217 219 / 50%);
     }
+  }
+}
+
+.confirm-details {
+  text-align: center;
+
+  .confirm-quantity {
+    font-size: 2.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .confirm-product {
+    font-size: 1.25rem;
+    font-weight: 300;
   }
 }

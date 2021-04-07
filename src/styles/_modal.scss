@@ -1,0 +1,32 @@
+.modal-content {
+  border-radius: 2rem;
+  padding: 1.25rem;
+}
+
+.modal-header,
+.modal-footer {
+  justify-content: center;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.modal-body {
+  margin: 2.25rem auto;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  padding: 0;
+}
+
+@media (max-width: 414px) {
+  .modal-dialog {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
