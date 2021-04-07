@@ -41,10 +41,16 @@
 
   .link {
     color: #272343;
+    font-size: 1rem;
+    margin-top: 2.5rem;
   }
 }
 
 .add-btn-container {
   text-align: center;
   padding: 2.75rem 0;
+}
+
+.modal-footer .btn-primary {
+  min-width: 6.125rem;
 }

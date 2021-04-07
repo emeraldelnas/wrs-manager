@@ -11,14 +11,7 @@
   <div class="products container">
     <div>
       <app-products></app-products>
-
-      <div class="add-btn-container">
-        <button class="btn btn-outline-primary" type="button">
-          Add Custom Product
-        </button>
-      </div>
-
-      <a href="" class="link">Update Prices</a>
+      <a [routerLink]="['/manage-products']" class="link">Manage Products</a>
     </div>
   </div>
 </div>

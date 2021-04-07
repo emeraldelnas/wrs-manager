@@ -9,6 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { MainModule } from './pages/main/main.module';
+import { ManageProductsModule } from './pages/manage-products/manage-products.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { MainModule } from './pages/main/main.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     MainModule,
+    ManageProductsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

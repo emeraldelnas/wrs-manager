@@ -2,11 +2,11 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  selector: 'app-manage-products',
+  templateUrl: './manage-products.component.html',
+  styleUrls: ['./manage-products.component.scss'],
 })
-export class MainComponent implements OnInit {
+export class ManageProductsComponent implements OnInit {
   addProductModalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) {}

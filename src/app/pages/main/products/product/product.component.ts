@@ -55,8 +55,10 @@ export class ProductComponent implements OnInit {
       ...this.product,
       quantity: this.quantity,
     });
-
     console.log('added', this.quantity);
+
+    this.quantity = 1;
+
     this.confirmModalRef.hide();
   }
 }
