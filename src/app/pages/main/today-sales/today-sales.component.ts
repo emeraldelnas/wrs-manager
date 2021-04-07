@@ -17,8 +17,8 @@ export class TodaySalesComponent implements OnInit {
   getToday(): void {
     const date = new Date();
     const options = {
-      weekday: 'long',
-      month: 'short',
+      weekday: 'short',
+      month: 'long',
       day: 'numeric',
     };
 
