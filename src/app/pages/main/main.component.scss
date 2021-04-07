@@ -1,5 +1,13 @@
+.main-wrapper {
+  height: 100vh;
+}
+
+.top {
+  height: 55vh;
+}
+
 .today-sales {
-  margin-top: 3rem;
+  padding-top: 4vh;
 }
 
 .link {
@@ -17,10 +25,7 @@
 }
 
 .products {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  height: 45vh;
   background-color: #fff;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
