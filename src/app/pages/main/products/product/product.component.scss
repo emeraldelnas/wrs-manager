@@ -38,10 +38,18 @@
         height: 2.8125rem;
         display: grid;
         place-content: center;
+        transition: box-shadow 0.15s;
 
         &:hover,
         &:focus {
           background-color: #f3f3f3;
+          box-shadow: none;
+        }
+
+        &:active,
+        &:active:focus {
+          background-color: #f8f9fa;
+          box-shadow: 0 0 0 0.2rem rgb(216 217 219 / 50%);
         }
 
         &:not(:last-child) {
@@ -56,5 +64,20 @@
     border-radius: 0.9375rem;
     height: 6.375rem;
     padding: 0;
+    transition: box-shadow 0.15s;
+
+    &:hover {
+      border: solid 1px #e5e5e8;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:active,
+    &:active:focus {
+      background-color: #f0f0f7;
+      box-shadow: 0 0 0 0.2rem rgb(216 217 219 / 50%);
+    }
   }
 }
