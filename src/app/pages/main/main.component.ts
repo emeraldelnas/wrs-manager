@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { DbService } from '@services/db.service';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +10,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class MainComponent implements OnInit {
   addProductModalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService) {}
+  constructor(private db: DbService, private modalService: BsModalService) {}
 
   ngOnInit(): void {}
 

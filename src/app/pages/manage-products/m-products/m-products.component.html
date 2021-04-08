@@ -1,6 +1,6 @@
 <div class="m-product mb-3">
   <div class="form-group mb-0">
-    <label for="product-name">Round Gallon</label>
+    <label for="product-name">{{ product.name }}</label>
     <div class="input-group">
       <input
         type="number"
@@ -8,13 +8,49 @@
         id="product-name"
         placeholder="0.00"
         autocomplete="off"
+        [ngModel]="product.price | number: '1.2'"
+        (ngModelChange)="product.price = $event"
       />
       <div class="input-group-append">
         <span class="input-group-text">₱</span>
       </div>
     </div>
   </div>
-  <button class="btn btn-light btn-delete">
+  <button
+    class="btn btn-light btn-delete"
+    (click)="openConfirmDeleteModal(deleteProductModal)"
+  >
     <i class="icon-delete"></i>
   </button>
 </div>
+
+<ng-template #deleteProductModal>
+  <form autocomplete="off">
+    <div class="modal-header">
+      <h4 class="modal-title">Delete Product?</h4>
+    </div>
+    <div class="modal-body">
+      <div class="delete-details">
+        <p class="p-name">{{ product.name }}</p>
+        <p class="p-price">₱{{ product.price | number: "1.2" }}</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="submit"
+        class="btn btn-outline-secondary"
+        (click)="deleteProduct()"
+      >
+        Delete
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        data-dismiss="modal"
+        (click)="deleteModalRef.hide()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</ng-template>

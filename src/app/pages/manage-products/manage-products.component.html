@@ -20,7 +20,8 @@
     <div class="m-products-list">
       <div>
         <app-m-products
-          *ngFor="let item of [].constructor(22)"
+          *ngFor="let product of products$ | async"
+          [product]="product"
         ></app-m-products>
       </div>
     </div>
@@ -37,7 +38,11 @@
 </div>
 
 <ng-template #addProductModal>
-  <form autocomplete="off">
+  <form
+    [formGroup]="addProductForm"
+    (ngSubmit)="addProduct()"
+    autocomplete="off"
+  >
     <div class="modal-header">
       <h4 class="modal-title">New Product</h4>
     </div>
@@ -45,9 +50,11 @@
       <div class="form-group">
         <label for="product-name">Name</label>
         <input
+          formControlName="name"
           type="text"
           class="form-control"
           id="product-name"
+          placeholder="Product name"
           autofocus
           autocomplete="off"
         />
@@ -55,9 +62,11 @@
       <div class="form-group">
         <label for="product-price">Price</label>
         <input
-          type="text"
+          formControlName="price"
+          type="number"
           class="form-control"
           id="product-price"
+          placeholder="0.00"
           autocomplete="off"
         />
       </div>
@@ -71,7 +80,13 @@
       >
         Cancel
       </button>
-      <button type="submit" class="btn btn-primary">Add</button>
+      <button
+        [disabled]="addProductForm.invalid"
+        type="submit"
+        class="btn btn-primary"
+      >
+        Add
+      </button>
     </div>
   </form>
 </ng-template>

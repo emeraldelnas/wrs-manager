@@ -1,7 +1,7 @@
 <div class="product">
   <div class="details">
-    <p class="price">₱12.00</p>
-    <p class="name">Round Gallon</p>
+    <p class="price">₱{{ product.price }}</p>
+    <p class="name">{{ product.name }}</p>
   </div>
   <div class="quantity-control">
     <p class="quantity">{{ quantity }}x</p>
@@ -54,7 +54,7 @@
   <div class="modal-body">
     <div class="confirm-details">
       <p class="confirm-quantity">{{ quantity }}x</p>
-      <p class="confirm-product">Round Gallon</p>
+      <p class="confirm-product">{{ product.name }}</p>
     </div>
   </div>
   <div class="modal-footer">
