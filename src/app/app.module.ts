@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { MainModule } from './pages/main/main.module';
 import { ManageProductsModule } from './pages/manage-products/manage-products.module';
+import { SalesReportModule } from './pages/sales-report/sales-report.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { ManageProductsModule } from './pages/manage-products/manage-products.mo
     AngularFirestoreModule.enablePersistence(),
     MainModule,
     ManageProductsModule,
+    SalesReportModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
