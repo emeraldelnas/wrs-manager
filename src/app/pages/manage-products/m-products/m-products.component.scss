@@ -43,3 +43,18 @@
     }
   }
 }
+
+.delete-details {
+  text-align: center;
+  .p-name {
+    font-size: 1.25rem;
+  }
+  .p-price {
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+}
+
+.btn-outline-secondary {
+  border-color: #fff;
+}

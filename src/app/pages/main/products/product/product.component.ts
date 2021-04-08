@@ -7,15 +7,7 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
-export interface Product {
-  name: string;
-  price: number;
-}
-
-export interface ProductPayload extends Product {
-  quantity: number;
-}
+import { Product, ProductPayload } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-product',
@@ -55,7 +47,11 @@ export class ProductComponent implements OnInit {
       ...this.product,
       quantity: this.quantity,
     });
-    console.log('added', this.quantity);
+    console.log(
+      `added ${this.quantity}x ${this.product.name} = ${
+        this.quantity * this.product.price
+      }`
+    );
 
     this.quantity = 1;
 
