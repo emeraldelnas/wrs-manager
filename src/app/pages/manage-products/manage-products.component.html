@@ -1,6 +1,6 @@
 <div class="main-wrapper container" style="background-color: #fff">
   <div class="header">
-    <a [routerLink]="['/']" class="link"
+    <a appBack class="link"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -18,7 +18,11 @@
   <div class="content">
     <p class="title">Manage Products</p>
     <div class="m-products-list">
-      <app-m-products *ngFor="let item of [].constructor(2)"></app-m-products>
+      <div>
+        <app-m-products
+          *ngFor="let item of [].constructor(22)"
+        ></app-m-products>
+      </div>
     </div>
   </div>
   <div class="footer">
@@ -33,18 +37,29 @@
 </div>
 
 <ng-template #addProductModal>
-  <form>
+  <form autocomplete="off">
     <div class="modal-header">
       <h4 class="modal-title">New Product</h4>
     </div>
     <div class="modal-body">
       <div class="form-group">
         <label for="product-name">Name</label>
-        <input type="text" class="form-control" id="product-name" />
+        <input
+          type="text"
+          class="form-control"
+          id="product-name"
+          autofocus
+          autocomplete="off"
+        />
       </div>
       <div class="form-group">
         <label for="product-price">Price</label>
-        <input type="text" class="form-control" id="product-price" />
+        <input
+          type="text"
+          class="form-control"
+          id="product-price"
+          autocomplete="off"
+        />
       </div>
     </div>
     <div class="modal-footer">

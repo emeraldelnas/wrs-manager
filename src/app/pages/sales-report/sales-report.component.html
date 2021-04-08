@@ -1,0 +1,26 @@
+<div class="main-wrapper container" style="background-color: #fff">
+  <div class="header">
+    <a appBack class="link"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+      >
+        <path
+          d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"
+          fill="rgba(39,35,67,1)"
+        />
+      </svg>
+      Back</a
+    >
+  </div>
+  <div class="content">
+    <div class="mb-5">
+      <p class="title">Monthy Sales</p>
+      <small class="sub-title">Showing the past 4 months</small>
+    </div>
+
+    <app-month-total *ngFor="let item of [].constructor(4)"></app-month-total>
+  </div>
+</div>
