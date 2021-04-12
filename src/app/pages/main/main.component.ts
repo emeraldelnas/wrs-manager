@@ -12,7 +12,11 @@ export class MainComponent implements OnInit {
 
   constructor(private db: DbService, private modalService: BsModalService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.db.addTransaction();
+    // this.db.addNewProductToTotalSales();
+    // this.db.checkIfMonthExists();
+  }
 
   openAddProductModal(template: TemplateRef<any>): void {
     this.addProductModalRef = this.modalService.show(

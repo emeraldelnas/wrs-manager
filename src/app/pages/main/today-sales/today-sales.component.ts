@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '@services/db.service';
+import { Observable } from 'rxjs';
+import { map, reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-today-sales',
@@ -7,12 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodaySalesComponent implements OnInit {
   today: string;
+  todayTotal: Observable<number>;
 
-  constructor() {
+  constructor(private db: DbService) {
     this.getToday();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.todayTotal = this.db.transactions.pipe(
+      map((transaction) =>
+        transaction.reduce(
+          (prevTotal, currentTransaction) =>
+            prevTotal + currentTransaction.total,
+          0
+        )
+      )
+    );
+  }
 
   getToday(): void {
     const date = new Date();
@@ -21,7 +35,5 @@ export class TodaySalesComponent implements OnInit {
       month: 'long',
       day: 'numeric',
     };
-
-    this.today = date.toLocaleDateString('en-us', options);
   }
 }

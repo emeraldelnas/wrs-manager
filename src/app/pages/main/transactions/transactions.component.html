@@ -1,12 +1,17 @@
 <div class="transactions">
-  <p class="header" [ngClass]="{ 'w-shadow': transactions >= 6 }">
-    {{ transactions }} Transactions
+  <p
+    class="header"
+    [ngClass]="{ 'w-shadow': (transactions | async)?.length >= 6 }"
+  >
+    {{ (transactions | async)?.length }}
+    Transaction{{ (transactions | async)?.length > 1 ? "s" : "" }}
   </p>
 
   <div class="transactions-list">
     <div>
       <app-transaction
-        *ngFor="let item of [].constructor(transactions)"
+        *ngFor="let transaction of transactions | async"
+        [transaction]="transaction"
       ></app-transaction>
     </div>
   </div>

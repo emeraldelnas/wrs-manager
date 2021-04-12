@@ -45,6 +45,7 @@ export class ManageProductsComponent implements OnInit {
       .addProduct(this.addProductForm.value)
       .then((response) => {
         console.log('Added Product!');
+        this.addProductForm.reset();
       })
       .catch((response) => {
         console.log('Ooops... Something went wrong.');
