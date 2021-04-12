@@ -35,5 +35,7 @@ export class TodaySalesComponent implements OnInit {
       month: 'long',
       day: 'numeric',
     };
+
+    this.today = date.toLocaleDateString('en-us', options);
   }
 }
