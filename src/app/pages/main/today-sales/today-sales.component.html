@@ -2,6 +2,6 @@
   <p class="today-date">{{ today }}</p>
   <div class="today-total">
     <span class="prefix mr-3">₱</span>
-    <span class="total-amount">1, 056.00</span>
+    <span class="total-amount">{{ todayTotal | async | number: "1.2" }}</span>
   </div>
 </div>

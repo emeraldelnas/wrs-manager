@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Transaction } from '@models/transaction.model';
+import { DbService } from '@services/db.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-transactions',
@@ -6,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transactions.component.scss'],
 })
 export class TransactionsComponent implements OnInit {
-  transactions = 12;
+  transactions: Observable<Transaction[]>;
 
-  constructor() {}
+  constructor(private db: DbService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.transactions = this.db.getTodaysTransactions();
+  }
 }

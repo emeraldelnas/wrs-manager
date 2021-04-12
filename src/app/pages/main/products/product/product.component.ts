@@ -6,6 +6,7 @@ import {
   Output,
   TemplateRef,
 } from '@angular/core';
+import { DbService } from '@services/db.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Product, ProductPayload } from 'src/app/shared/models';
 
@@ -21,7 +22,7 @@ export class ProductComponent implements OnInit {
 
   confirmModalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService) {}
+  constructor(private db: DbService, private modalService: BsModalService) {}
 
   ngOnInit(): void {}
 
@@ -47,11 +48,21 @@ export class ProductComponent implements OnInit {
       ...this.product,
       quantity: this.quantity,
     });
-    console.log(
-      `added ${this.quantity}x ${this.product.name} = ${
-        this.quantity * this.product.price
-      }`
-    );
+
+    const payload = {
+      created_at: '',
+      product: this.product,
+      quantity: this.quantity,
+      total: this.quantity * this.product.price,
+    };
+
+    this.db.addTransaction(payload);
+
+    // console.log(
+    //   `added ${this.quantity}x ${this.product.name} = ${
+    //     this.quantity * this.product.price
+    //   }`
+    // );
 
     this.quantity = 1;
 
