@@ -14,6 +14,6 @@ export class TransactionsComponent implements OnInit {
   constructor(private db: DbService) {}
 
   ngOnInit(): void {
-    this.transactions = this.db.getTodaysTransactions();
+    this.transactions = this.db.transactions;
   }
 }

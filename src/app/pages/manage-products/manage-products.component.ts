@@ -22,7 +22,7 @@ export class ManageProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.products$ = this.db.oGetProducts();
+    this.products$ = this.db.products;
     this.initAddProductForm();
   }
 

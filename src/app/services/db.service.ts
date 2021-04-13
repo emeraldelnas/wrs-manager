@@ -11,7 +11,7 @@ import { Product, Transaction } from '../shared/models';
 export class DbService {
   private currentMonth: string;
   private timestamp: firebase.firestore.FieldValue;
-  // public products: Observable<Product[]>;
+  public products: Observable<Product[]>;
   public transactions: Observable<Transaction[]>;
 
   constructor(private afs: AngularFirestore) {
@@ -29,6 +29,7 @@ export class DbService {
       this.populateCurrentTotalSales();
     });
 
+    this.products = this.oGetProducts();
     this.transactions = this.getTodaysTransactions();
   }
 
@@ -61,7 +62,12 @@ export class DbService {
   }
 
   async aGetProducts(): Promise<Product[]> {
-    const snapshot = await this.afs.collection('products').get().toPromise();
+    const snapshot = await this.afs
+      .collection('products', (ref) => {
+        return ref.orderBy('created_at', 'asc');
+      })
+      .get()
+      .toPromise();
 
     const products = [];
     snapshot.forEach((doc) => {
@@ -73,7 +79,9 @@ export class DbService {
 
   oGetProducts(): Observable<Product[]> {
     return this.afs
-      .collection('products')
+      .collection('products', (ref) => {
+        return ref.orderBy('created_at', 'asc');
+      })
       .snapshotChanges()
       .pipe(
         map((actions) =>
@@ -99,7 +107,7 @@ export class DbService {
   getTodaysTransactions(): Observable<any> {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    today.setUTCHours(0, 0, 0, 0);
+    // today.setUTCHours(0, 0, 0, 0);
 
     return this.afs
       .collection('transactions')
